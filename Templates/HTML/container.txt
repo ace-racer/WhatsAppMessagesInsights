@@ -1,0 +1,16 @@
+<html>
+ <head>
+   <title>{0}</title>
+   <link rel='stylesheet' href='../Libraries/CSS/styles.css' />
+ </head>
+ <body>
+   <table>
+     <tr>
+        <th>Timestamp</th>
+        <th>Sender</th>
+    	<th>Message</th>
+     </tr>
+     {1}
+   </table>
+ </body>
+</html>

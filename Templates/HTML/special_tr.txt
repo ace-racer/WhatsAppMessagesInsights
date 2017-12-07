@@ -1,0 +1,5 @@
+<tr>
+    <td>{0}</td>
+    <td>{1}</td>
+    <td class='highlighted'>{2}</td>
+</tr>
