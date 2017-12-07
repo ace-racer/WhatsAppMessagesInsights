@@ -27,7 +27,7 @@ class BaseOperations(object):
         except Exception, e:
             print "An error occurred while writing to the file: " + str(e)
 
-    def get_separated_contents_from_message_lines(self, process_remaining_message_text=None):
+    def get_separated_contents_from_message_lines(self, process_text=None):
         """Get the separated contents from the message lines ina 3 tuple (timestamp, sender, content)"""
         if self.sepatated_message_contents is None:
             self.sepatated_message_contents = []
@@ -49,8 +49,10 @@ class BaseOperations(object):
                         sent_from = ''
                         remaining_message_text = message
 
-                    if process_remaining_message_text is not None:
-                        remaining_message_text = process_remaining_message_text(remaining_message_text)
+                    if process_text is not None:
+                        time_stamp = process_text(time_stamp)
+                        sent_from = process_text(sent_from)
+                        remaining_message_text = process_text(remaining_message_text)
                     self.sepatated_message_contents.append((time_stamp, sent_from, remaining_message_text))
 
         return self.sepatated_message_contents
@@ -59,7 +61,7 @@ class BaseOperations(object):
         """Gets the template file content"""
         file_location = os.path.join(self.templates_location, file_name)
         file_contents = self.open_file_and_read_contents(file_location)
-        return '\n'.join(file_contents)
+        return ''.join(file_contents)
 
     def generate_output_file(self, search_text=None):
         """Generate the output file"""

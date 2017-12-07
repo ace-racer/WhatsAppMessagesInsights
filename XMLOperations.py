@@ -24,5 +24,5 @@ class XMLOperations(BaseOperations):
         if content is not None:
             content = content.replace('<', '')
             content = content.replace('>', '')
-
+            content = content.replace('&', 'and')
         return content
