@@ -23,6 +23,13 @@ if __name__ == "__main__":
         html_filename = filename_without_extension + ".html"
         xml_filename = filename_without_extension + ".xml"
         input_file_complete_location = os.path.join("TestFiles", filename)
-        output_file_complete_location = os.path.join("Output", html_filename)
-        operations = HTMLOperations(input_file_complete_location, output_file_complete_location)
+        html_output_file_complete_location = os.path.join("Output", html_filename)
+        xml_output_file_complete_location = os.path.join("Output", xml_filename)
+
+        # Generate the HTML output
+        operations = HTMLOperations(input_file_complete_location, html_output_file_complete_location)
+        operations.generate_output_file(search_text)
+
+        # Generate the XML output
+        operations = XMLOperations(input_file_complete_location, xml_output_file_complete_location)
         operations.generate_output_file(search_text)

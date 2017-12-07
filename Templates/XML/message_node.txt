@@ -1,0 +1,5 @@
+<message>
+    <timestamp>{0}</timestamp>
+    <sender>{1}</sender>
+    <content>{2}</content>
+</message>
