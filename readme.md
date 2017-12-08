@@ -17,9 +17,9 @@
 5. Download the chat text file from your email inbox and save it inside the folder "TestFiles" created in step # 3 above
 6. Run the main.py application from the command line in the below manner:
     * python main.py {Name of the TXT file with the chat details}. E.g. python main.py my_fantastic_group_convo.txt
-       This will create the outputs (HTML and XML) corresponding to this file in the Output folder created in step # 4 above
+      This will create the outputs (HTML and XML) corresponding to this file in the Output folder created in step # 4 above
     * python main.py {Name of the TXT file with the chat details} {Search Text}. E.g. python main.py my_fantastic_group_convo.txt music
-       This will create the outputs (HTML and XML) corresponding to this file in the Output folder created in step # 4 above with the contents of the HTML file formatted to show messages where the 'SearchText' appears
+      This will create the outputs (HTML and XML) corresponding to this file in the Output folder created in step # 4 above with the contents of the HTML file formatted to show messages where the 'SearchText' appears
 7. Open the Output folder and you would find 2 files X.html and X.xml where X is the name of the original input file that contains the messages in the chat nicely formatted in HTML and XML respectively.
 8. All referencing files (CSS, JS Scripts) for the HTML file can be found in the Libraries folder
 9. Optional: The generated XML file can be imported into a SpreadSheet software like Microsoft Excel (TM) which can be used to create Pivot tables and charts to answer some basic questions on the group.
