@@ -12,10 +12,12 @@ class HTMLOperations(BaseOperations):
         special_tr = self.get_template_file_contents("special_tr.txt")
         separated_contents = self.get_separated_contents_from_message_lines()
         trs = ""
+        if search_text is not None:
+            search_text_lower = search_text.lower()
+
         for item in separated_contents:
             time_stamp, sender, content = item
-            tr_template = normal_tr
-            search_text_lower = search_text.lower()
+            tr_template = normal_tr            
             content_lower = content.lower()
             sender_lower = sender.lower()
             if search_text is not None and (content_lower.find(search_text_lower) >= 0 or sender_lower.find(search_text_lower) >= 0):
