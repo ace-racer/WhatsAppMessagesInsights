@@ -28,10 +28,9 @@
 1. The application is developed using OOPs principles and maintaining a modular approach
 2. The starting point is main.py which passes the parameters from the command line to instatiate the required objects and create the output
 3. The base operations like reading from a file, writing to a file and breaking the file contents into a 3 tuple is written in the BaseOperations class.
-Kindly note that the format of the messages from a WhatsApp message dump is:
-
- TimeStamp-Sender:Content\n
-So, the above is parsed and stored in an in memory list
+   Kindly note that the format of the messages from a WhatsApp message dump is:
+   TimeStamp-Sender:Content\n
+   So, the above is parsed and stored in an in memory list
 4. Specific operations for creating HTML and XML outputs are in the derived classes respectively and override the base method 'generate_output_file'
 5. Templates for creating the outputs can be found as text files in the Templates folder. Please note that do not modify any file here unless really required as it can break the functionality.
 6. Please feel free to add functionality to generate other output files for gathering better insights
