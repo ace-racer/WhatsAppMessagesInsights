@@ -1,10 +1,16 @@
 <html>
  <head>
    <title>{0}</title>
+   <script src='../Libraries/JS/jquery3.2.1.min.js'></script>  
    <link rel='stylesheet' href='../Libraries/CSS/styles.css' />
  </head>
  <body>
-   <table>
+   <div>
+    <span>Search text:</span>
+    <input type ='text' maxlength='50' id='searchbox' onchange='findMessagesWithProvidedText()'/>
+   </div>
+   <div>
+   <table id='results'>
      <tr>
         <th>Timestamp</th>
         <th>Sender</th>
@@ -12,5 +18,7 @@
      </tr>
      {1}
    </table>
+  </div>
+  <script src='../Libraries/JS/script.js'></script>
  </body>
 </html>
