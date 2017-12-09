@@ -53,8 +53,7 @@ function findMessagesWithProvidedText()
 				searchResultsHtml += rowHtml;
 			}
 		}
-		
-		debugger;
+				
         $("#results tr:last").after(searchResultsHtml);		
 	}	
 }
