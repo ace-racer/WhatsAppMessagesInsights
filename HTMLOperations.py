@@ -15,7 +15,7 @@ class HTMLOperations(BaseOperations):
         if search_text is not None:
             search_text_lower = search_text.lower()
 
-        for item in separated_contents:
+        for number, item in enumerate(separated_contents):
             time_stamp, sender, content = item
             tr_template = normal_tr            
             content_lower = content.lower()
@@ -23,7 +23,7 @@ class HTMLOperations(BaseOperations):
             if search_text is not None and (content_lower.find(search_text_lower) >= 0 or sender_lower.find(search_text_lower) >= 0):
                 tr_template = special_tr
 
-            tr = tr_template.format(time_stamp, sender, content)
+            tr = tr_template.format(number, time_stamp, sender, content)
             trs += tr + "\n"
         contents = container.format(self.input_file, trs)
         self.write_contents_to_file(contents)

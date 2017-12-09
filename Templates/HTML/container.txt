@@ -1,10 +1,13 @@
 <html>
  <head>
-   <title>{0}</title>
+   <title>WhatsApp messages details</title>
    <script src='../Libraries/JS/jquery3.2.1.min.js'></script>  
    <link rel='stylesheet' href='../Libraries/CSS/styles.css' />
  </head>
  <body>
+   <div class='headercontainer'>
+     <h2>Messages from {0}</h2>
+   </div>
    <div id='search'>
     <span>Search text:</span>
     <input type ='text' maxlength='50' id='searchbox' onchange='findMessagesWithProvidedText()'/>
@@ -12,6 +15,7 @@
    <div>
    <table id='results'>
      <tr>
+        <th>#</th> 
         <th>Timestamp</th>
         <th>Sender</th>
     	<th>Message</th>
