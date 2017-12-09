@@ -5,7 +5,7 @@
    <link rel='stylesheet' href='../Libraries/CSS/styles.css' />
  </head>
  <body>
-   <div>
+   <div id='search'>
     <span>Search text:</span>
     <input type ='text' maxlength='50' id='searchbox' onchange='findMessagesWithProvidedText()'/>
    </div>

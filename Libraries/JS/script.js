@@ -6,6 +6,7 @@ initialTableContents = null;
 function findMessagesWithProvidedText()
 {	
 	var searchText = $("#searchbox").val();
+	var searchTextLowerCase = searchText.toLowerCase();
 	if(searchText.length >= 1)
 	{
 		var contentsTable = document.getElementById("results");
@@ -19,11 +20,7 @@ function findMessagesWithProvidedText()
 				var rowContents = {};
 				for(var columnNum = 0; cell = row.cells[columnNum]; columnNum++)
 				{
-					rowContents[contentsTable.rows[0].cells[columnNum].innerHTML] = cell.innerHTML
-					if(rowNum == 1)
-					{
-						alert(cell.innerHTML);
-					}
+					rowContents[contentsTable.rows[0].cells[columnNum].innerHTML] = cell.innerHTML					
 				}
 				
 				initialTableContents.push(rowContents)
@@ -31,10 +28,33 @@ function findMessagesWithProvidedText()
 		}
 
 		// remove all rows from the table
-		$("#results td").remove();
+		$("#results").find("tr:gt(0)").remove();
+		
+		// search the original contents for matches
+		var searchResultsHtml = "";
 		for(var itr = 0; itr < initialTableContents.length; itr++)
 		{
+			var isMatch = false;
+			Object.keys(initialTableContents[itr]).forEach(function(key) {
+				var contentsLowerCase = initialTableContents[itr][key].toLowerCase();
+				if(contentsLowerCase.indexOf(searchTextLowerCase) >= 0)
+				{
+					isMatch = true;					
+				}
+			});
 			
-		}			
+			if(isMatch)
+			{
+				rowHtml = "<tr>";
+				Object.keys(initialTableContents[itr]).forEach(function(key) {
+					rowHtml += "<td>" + initialTableContents[itr][key] + "</td>"
+				});
+				rowHtml += "</tr>";
+				searchResultsHtml += rowHtml;
+			}
+		}
+		
+		debugger;
+        $("#results tr:last").after(searchResultsHtml);		
 	}	
 }

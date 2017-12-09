@@ -11,3 +11,9 @@ table{
 .highlighted{
      background-color: lightgreen;
 }
+
+#search{
+	padding:5px;
+	margin: 20px;
+	background-color: lightgreen;
+}
