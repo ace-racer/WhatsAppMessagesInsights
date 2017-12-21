@@ -3,7 +3,7 @@ from BaseOperations import BaseOperations
 
 class HTMLOperations(BaseOperations):
     def __init__(self, input_file, output_file):
-        super(HTMLOperations, self).__init__(input_file, output_file, "Templates\\HTML")
+        super(HTMLOperations, self).__init__(input_file, output_file, "Templates/HTML")
 
     def generate_output_file(self, search_text=None):
         """Generates the output file"""

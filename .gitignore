@@ -1,3 +1,4 @@
 TestFiles/
 Output/
 *.pyc
+__pycache__/

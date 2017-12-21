@@ -13,8 +13,8 @@ class BaseOperations(object):
         """Reads the file"""
         try:
             return [line for line in open(file_name, 'r')]
-        except Exception, e:
-            print "An error occurred while reading the file {0}: {1}".format(file_name, str(e))
+        except Exception as e:
+            print ("An error occurred while reading the file {0}: {1}".format(file_name, str(e)))
             raise
 
     def write_contents_to_file(self, file_contents):
@@ -23,9 +23,9 @@ class BaseOperations(object):
             f = open(self.output_file, 'w')
             f.write(file_contents)
             f.close()
-            print "The output was written to the file: {0} successfully.".format(self.output_file)
-        except Exception, e:
-            print "An error occurred while writing to the file: " + str(e)
+            print ("The output was written to the file: {0} successfully.".format(self.output_file))
+        except Exception as e:
+            print ("An error occurred while writing to the file: " + str(e))
 
     def get_separated_contents_from_message_lines(self, process_text=None):
         """Get the separated contents from the message lines ina 3 tuple (timestamp, sender, content)"""
@@ -33,7 +33,7 @@ class BaseOperations(object):
             self.sepatated_message_contents = []
             file_contents = self.open_file_and_read_contents(self.input_file)
             if file_contents is not None:
-                print "There were some messages found in the file"
+                print ("There were some messages found in the file")
                 for whatsapp_message in file_contents:
                     if whatsapp_message.find('-') >= 0:
                         time_stamp = whatsapp_message.split('-')[0]
