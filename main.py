@@ -4,6 +4,7 @@ import constants
 from BaseOperations import BaseOperations
 from HTMLOperations import HTMLOperations
 from XMLOperations import XMLOperations
+from AggregateOperations import AggregateOperations
 
 
 if __name__ == "__main__":
@@ -40,3 +41,7 @@ if __name__ == "__main__":
         # Generate the XML output
         operations = XMLOperations(input_file_complete_location, xml_output_file_complete_location)
         operations.generate_output_file(search_text)
+
+        # Generate the aggregate analysis
+        operations = AggregateOperations(input_file_complete_location, None)
+        operations.generate_output_file(None)
