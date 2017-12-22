@@ -1,9 +1,14 @@
+"""Implement the HTML operations"""
+import os
+import constants
 from BaseOperations import BaseOperations
 
 
 class HTMLOperations(BaseOperations):
+    """Contains the HTML operations"""
     def __init__(self, input_file, output_file):
-        super(HTMLOperations, self).__init__(input_file, output_file, "Templates/HTML")
+        HTML_template_path = os.path.join(constants.TEMPLATE_FOLDER_NAME, constants.HTML_TEMPLATES_FOLDER_NAME)
+        super(HTMLOperations, self).__init__(input_file, output_file, HTML_template_path)
 
     def generate_output_file(self, search_text=None):
         """Generates the output file"""

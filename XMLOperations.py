@@ -1,9 +1,14 @@
+"""Implement the XML operations"""
+import os
+import constants
 from BaseOperations import BaseOperations
 
 
 class XMLOperations(BaseOperations):
+    """Contains the XML operations"""
     def __init__(self, input_file, output_file):
-        super(XMLOperations, self).__init__(input_file, output_file, "Templates/XML")
+        XML_template_path = os.path.join(constants.TEMPLATE_FOLDER_NAME, constants.XML_TEMPLATES_FOLDER_NAME)
+        super(XMLOperations, self).__init__(input_file, output_file, XML_template_path)
 
     def generate_output_file(self, search_text=None):
         """Generates the output file"""

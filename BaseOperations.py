@@ -6,7 +6,7 @@ class BaseOperations(object):
         self.input_file = input_file
         self.output_file = output_file
         self.sepatated_message_contents = None
-        self.templates_location = templates_location
+        self.templates_location = templates_location       
 
     @staticmethod
     def open_file_and_read_contents(file_name):
