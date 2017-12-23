@@ -37,11 +37,15 @@ if __name__ == "__main__":
         # Generate the HTML output
         operations = HTMLOperations(input_file_complete_location, html_output_file_complete_location)
         operations.generate_output_file(search_text)
+        print("Completed generating the HTML for the messages")
 
         # Generate the XML output
         operations = XMLOperations(input_file_complete_location, xml_output_file_complete_location)
         operations.generate_output_file(search_text)
+        print("Completed generating the XML for the messages")
 
         # Generate the aggregate analysis
         operations = AggregateOperations(input_file_complete_location, None)
         operations.generate_output_file(None)
+        print("Completed generating the images")
+        print("All files are present in the Output folder in the same location as main.py script...")
