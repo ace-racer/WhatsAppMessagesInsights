@@ -1,7 +1,6 @@
 import os
 import sys
 import constants
-from BaseOperations import BaseOperations
 from HTMLOperations import HTMLOperations
 from XMLOperations import XMLOperations
 from AggregateOperations import AggregateOperations

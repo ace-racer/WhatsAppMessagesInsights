@@ -12,7 +12,7 @@ class BaseOperations(object):
     def open_file_and_read_contents(file_name):
         """Reads the file"""
         try:
-            return [line for line in open(file_name, 'r')]
+            return [line for line in open(file_name, 'r', encoding="utf8")]
         except Exception as e:
             print ("An error occurred while reading the file {0}: {1}".format(file_name, str(e)))
             raise
@@ -20,7 +20,7 @@ class BaseOperations(object):
     def write_contents_to_file(self, file_contents):
         """Write the file contents to the file name"""
         try:
-            f = open(self.output_file, 'w')
+            f = open(self.output_file, 'w', encoding="utf8")
             f.write(file_contents)
             f.close()
             print ("The output was written to the file: {0} successfully.".format(self.output_file))
