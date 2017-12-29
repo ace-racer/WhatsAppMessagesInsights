@@ -6,15 +6,15 @@
 3. This is not meant to be a production application which can be used to earn money, since the intention is just points 1 and 2 above.
 
 ## How to run ##
-1. Install Python in your machine. The current version has been tested on Python 2.7.12 and runs there
+1. Install Python in your machine. The current version has been tested on Python 3.X and runs there
 2. Get the chat as a Text file from the WhatsApp group by following the below steps:
     a. Click on the 3 vertical ellipses on the top right corner of the group
     b. Click on More
     c. Click on Email chat
     d. Select without media to keep the size manageable to be sent as an email (most have a 25 MB limit)
-3. Create a folder called "TestFiles" in the same location as the main.py and the other Python scripts
-4. Create a folder called "Output" in the same location as the main.py and the other Python scripts
-5. Download the chat text file from your email inbox and save it inside the folder "TestFiles" created in step # 3 above
+3. Create a folder called "Inputs" in the same location as the main.py and the other Python scripts
+4. Create a folder called "Outputs" in the same location as the main.py and the other Python scripts
+5. Download the chat text file from your email inbox and save it inside the folder "Inputs" created in step # 3 above
 6. Run the main.py application from the command line in the below manner:
     * python main.py {Name of the TXT file with the chat details}. E.g. python main.py my_fantastic_group_convo.txt
 
@@ -33,7 +33,7 @@
    Kindly note that the format of the messages from a WhatsApp message dump is:
    TimeStamp-Sender:Content\n
    So, the above is parsed and stored in an in memory list
-4. Specific operations for creating HTML and XML outputs are in the derived classes respectively and override the base method 'generate_output_file'
+4. Specific operations for creating HTML, XML and aggregate analysis outputs are in the derived classes respectively and override the base method 'generate_output_file'
 5. Templates for creating the outputs can be found as text files in the Templates folder. Please note that do not modify any file here unless really required as it can break the functionality.
 6. Please feel free to add functionality to generate other output files for gathering better insights
 ### 7. Have fun! ###
