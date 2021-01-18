@@ -1,5 +1,8 @@
 # Python application to gather insights from WhatsApp group messages #
 
+## Command line help ##
+1. python main.py -h 
+
 ## Motivation ##
 1. Help to gather some insights from WhatsApp group chats - E.g. who is the most active member, what is the recurring topic of discussion, how active is the group, etc.
 2. Have fun!

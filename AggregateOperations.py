@@ -45,7 +45,8 @@ class AggregateOperations(BaseOperations):
         # plot the most active hours
         self.plot_barchart_from_list_of_tuples(most_active_hours, "Most active hours")
 
-        plt.show()
+        if os.environ.get("show_graphs") == "y":
+            plt.show()
 
     def get_datetime_from_timestamp(self, timestamp):
         """Get the date time object from time stamp string
