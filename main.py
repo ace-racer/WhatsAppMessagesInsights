@@ -6,10 +6,10 @@ from HTMLOperations import HTMLOperations
 from XMLOperations import XMLOperations
 from AggregateOperations import AggregateOperations
 
-parser = argparse.ArgumentParser(description="Generates insights from text snapshots of your Whatsapp group chats.")
-parser.add_argument("filename", type=str, help="Name of the text snapshot as a .txt file stored in the Input folder")
+parser = argparse.ArgumentParser(description="Generate insights from text snapshots of your Whatsapp group chats.")
+parser.add_argument("filename", type=str, help="Name of the text snapshot as a .txt file stored in the Inputs folder")
 parser.add_argument("--show_graphs", type=str, help="Show graphs showing aggregate metrics (y/yes), default not shown", nargs="?", const="n")
-parser.add_argument("--search_text", type=str, help="Search text to highlight in the generated output")
+parser.add_argument("--search_text", type=str, help="Optional search text to highlight in the generated output")
 
 if __name__ == "__main__":
     args = parser.parse_args()
