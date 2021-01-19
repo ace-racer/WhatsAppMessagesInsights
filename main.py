@@ -8,7 +8,7 @@ from AggregateOperations import AggregateOperations
 
 parser = argparse.ArgumentParser(description="Generate insights from text snapshots of your Whatsapp group chats.")
 parser.add_argument("filename", type=str, help="Name of the text snapshot as a .txt file stored in the Inputs folder")
-parser.add_argument("--show_graphs", type=str, help="Show graphs showing aggregate metrics (y/yes), default not shown", nargs="?", const="n")
+parser.add_argument("--show_graphs", type=str, help="Show graphs showing aggregate metrics (y/yes), default not shown", nargs="?", const="n", default="n")
 parser.add_argument("--search_text", type=str, help="Optional search text to highlight in the generated output")
 
 if __name__ == "__main__":
@@ -19,12 +19,22 @@ if __name__ == "__main__":
 
     os.environ["show_graphs"] = show_graphs
 
+    head, tail = os.path.split(filename)
+    file_path = filename
+    print('Head: ' + head)
+    print('Tail: ' + tail)
+
+    filename = tail
     print ("Input File name: " + filename)
     filename_without_extension = filename.strip().split('.')[0]
     print ("File name without extension: " + filename_without_extension)
     html_filename = filename_without_extension + ".html"
     xml_filename = filename_without_extension + ".xml"
-    input_file_complete_location = os.path.join(constants.INPUT_FILES_FOLDER_NAME, filename)
+
+    if not head:
+        input_file_complete_location = os.path.join(constants.INPUT_FILES_FOLDER_NAME, filename)
+    else:
+        input_file_complete_location = file_path
 
     # Create the output folder if it does not exist
     if not os.path.exists(constants.OUTPUT_FILES_FOLDER_NAME):
